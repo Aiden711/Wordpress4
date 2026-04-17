@@ -61,14 +61,11 @@
             'post_type' => 'viviendas', 
             'numberposts' => -1, 
         )); 
-        $vivienda_identificador = get_post_meta($post->ID, 
-'_ah_vivienda_identificador', true); 
+        $vivienda_identificador = get_post_meta($post->ID, '_ah_vivienda_identificador', true); 
         // Campo de seguridad para verificar el nonce al guardar los datos del metabox 
-        wp_nonce_field('alquilha_guardar_metabox_habitaciones', 
-'alquilha_nonce_habitaciones'); 
+        wp_nonce_field('alquilha_guardar_metabox_habitaciones', 'alquilha_nonce_habitaciones'); 
         // Obtener los valores guardados en los campos personalizados del metabox 
-        $numerometros = get_post_meta($post->ID, '_ah_numerometros', 
-true); 
+        $numerometros = get_post_meta($post->ID, '_ah_numerometros', true); 
         $numerocamas = get_post_meta($post->ID, '_ah_numerocamas', true); 
         $precio = get_post_meta($post->ID, '_ah_precio', true); 
         $mesaestudio = get_post_meta($post->ID, '_ah_mesaestudio', true); 
